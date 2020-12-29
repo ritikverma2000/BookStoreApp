@@ -10,7 +10,7 @@ public class  BookShop extends Frame implements ActionListener {
     protected Button login,signUp,booksearch;
     public BookShop() {
         final Frame f = new Frame("BookStoreApp");
-        Label l = new Label("WELCOME TO MY RVTS BOOK STORE");
+        Label l = new Label("WELCOME TO RVTS BOOK STORE");
         Font fl = new Font("TimesRoman", 1, 20);
         l.setBounds(110, 100, 400, 50);
         l.setFont(fl);
