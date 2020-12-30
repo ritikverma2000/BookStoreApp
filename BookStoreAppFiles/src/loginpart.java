@@ -2,11 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class loginpart extends BookShop {
-    public loginpart() {
-    }
-
-
-        public static class secondFrame extends Frame implements ActionListener, ItemListener {
+           public static class secondFrame extends Frame implements ActionListener, ItemListener {
             protected TextField name;
             protected TextField pass;
             protected Button loginButton;
