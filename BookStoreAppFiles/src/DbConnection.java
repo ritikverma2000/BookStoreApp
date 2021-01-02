@@ -21,9 +21,7 @@ public class DbConnection extends signUp {
             statement.setString(6,mno);
             Integer resultSet=statement.executeUpdate();
             System.out.println(resultSet+","+"row affected");
-//            if(!resultSet.next())
-//                System.out.println("Jai Mata Di");
-//                System.out.println(resultSet.getInt(1)+"  "+resultSet.getString(2)+"  "+resultSet.getString(3)+"  "+resultSet.getString(4)+"  "+resultSet.getString(5)+"  "+resultSet.getString(6));
+
             connection.close();
         }catch(Exception e){
             System.out.println(e);
