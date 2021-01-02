@@ -5,23 +5,22 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class signUp {
-    public signUp() {
 
-    }
     public static class thirdFrame extends Frame implements ActionListener {
-        protected Label fname;
-        protected Label lname;
-        protected Label uname;
-        protected Label upass;
-        protected Label mno;
-        protected Label adde;
-        protected TextField n1;
-        protected TextField n2;
-        protected TextField n3;
-        protected TextField n4;
-        protected TextField n5;
-        protected TextField n6;
+        public Label fname;
+        public Label lname;
+        public Label uname;
+        public Label upass;
+        public Label mno;
+        public Label adde;
+        public TextField n1;
+        public TextField n2;
+        public TextField n3;
+        public TextField n4;
+        public TextField n5;
+        public TextField n6;
         protected Button signUpbutton;
+        protected int count;
 
         public thirdFrame() {
             final Frame f2 = new Frame("signup");
@@ -98,12 +97,9 @@ public class signUp {
             String mno = n5.getText();
             String adde =n6.getText();
             if (e.getSource() == signUpbutton) {
-                System.out.println(fname);
-                System.out.println(lname);
-                System.out.println(uname);
-                System.out.println(pass);
-                System.out.println(mno);
-                System.out.println(adde);
+                new DbConnection(fname,lname,uname,pass,mno,adde);
+
+
             }
 
         }
