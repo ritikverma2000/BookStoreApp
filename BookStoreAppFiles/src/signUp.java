@@ -20,7 +20,7 @@ public class signUp {
         public TextField n5;
         public TextField n6;
         protected Button signUpbutton;
-        protected int count;
+
 
         public thirdFrame() {
             final Frame f2 = new Frame("signup");
@@ -96,6 +96,7 @@ public class signUp {
             String pass = n4.getText();
             String mno = n5.getText();
             String adde =n6.getText();
+
             if (e.getSource() == signUpbutton) {
                 new DbConnection(fname,lname,uname,pass,mno,adde);
 

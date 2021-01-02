@@ -2,12 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class loginpart extends BookShop {
-           public static class secondFrame extends Frame implements ActionListener, ItemListener {
-            protected TextField name;
-            protected TextField pass;
+            public static class secondFrame extends Frame implements ActionListener, ItemListener {
+            public TextField name;
+            public TextField pass;
             protected Button loginButton;
             protected Button resetButton;
-            protected Checkbox showPassword;
+            public Checkbox showPassword;
 
             public secondFrame() {
                 final Frame f1 = new Frame("Login Page");
@@ -51,8 +51,8 @@ public class loginpart extends BookShop {
                 String username = name.getText();
                 String password = pass.getText();
                 if (e.getSource() ==loginButton) {
-                    System.out.println(username);
-                    System.out.println(password);
+                 new DbConnection(username,password);
+
                 }
 
                 if (e.getSource() == resetButton) {

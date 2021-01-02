@@ -1,5 +1,3 @@
-
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +9,6 @@ public class booksearch extends BookShop {
         protected TextField searchBar;
         protected List l1;
         protected Button searchb;
-
 
         public FourthFrame() {
             Frame f3 = new Frame("bookSearch");
