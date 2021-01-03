@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.ItemListener;
 
 public class loginpart extends BookShop {
             public static class secondFrame extends Frame implements ActionListener, ItemListener {
@@ -21,7 +22,19 @@ public class loginpart extends BookShop {
                 resetButton = new Button("RESET");
                 loginButton.addActionListener(this);
                 resetButton.addActionListener(this);
-                showPassword.addItemListener(this);
+                //showPassword checkbox implementation
+                showPassword.addItemListener(new ItemListener() {
+                    @Override
+                    public void itemStateChanged(ItemEvent e) {
+                        if (e.getStateChange()==ItemEvent.DESELECTED){
+                            pass.setEchoChar('*');
+                        }
+                        else {
+                            pass.setEchoChar((char) 0);
+                        }
+                    }
+                });
+                pass.setEchoChar((char) 0);
                 f1.add(n);
                 f1.add(name);
                 f1.add(p);
