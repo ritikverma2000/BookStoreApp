@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ItemListener;
@@ -5,7 +6,7 @@ import java.awt.event.ItemListener;
 public class loginpart extends BookShop {
             public static class secondFrame extends Frame implements ActionListener, ItemListener {
             public TextField name;
-            public TextField pass;
+            public JPasswordField pass;
             protected Button loginButton;
             protected Button resetButton;
             public Checkbox showPassword;
@@ -16,7 +17,7 @@ public class loginpart extends BookShop {
                 Label n = new Label("User Name:", 1);
                 Label p = new Label("Password:", 1);
                 name = new TextField(40);
-                pass = new TextField(40);
+                pass = new JPasswordField(40);
                 showPassword = new Checkbox("Show Password");
                 loginButton = new Button("SIGN-IN");
                 resetButton = new Button("RESET");
@@ -34,7 +35,7 @@ public class loginpart extends BookShop {
                         }
                     }
                 });
-                pass.setEchoChar((char) 0);
+
                 f1.add(n);
                 f1.add(name);
                 f1.add(p);
