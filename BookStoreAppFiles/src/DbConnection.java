@@ -1,3 +1,5 @@
+import javax.swing.*;
+import javax.swing.plaf.OptionPaneUI;
 import java.sql.*;
 public class DbConnection extends signUp {
 
@@ -41,18 +43,37 @@ public class DbConnection extends signUp {
 
 
             ResultSet resultSet = statement.executeQuery();
+            if (!resultSet.next()) {
+                JOptionPane.showMessageDialog(null, "Invalid UserId or Password, Please try again");
 
-            ResultSetMetaData rsmd = resultSet.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (resultSet.next()) {
-                for (int i = 1; i <= columnsNumber; i++) {
-                    if (i > 1) System.out.print(",  ");
-                    String columnValue = resultSet.getString(i);
-                    System.out.print(rsmd.getColumnName(i) + " " +columnValue +" ");
+
+
+            }else{
+                String s = resultSet.getString(1);
+                String s1 = resultSet.getString(2);
+                String s2 = resultSet.getString(3);
+                String s3 = resultSet.getString(4);
+                String s4 = resultSet.getString(5);
+                String s5 = resultSet.getString(6);
+
+                if(s2.equals(username) && s3.equals(pass)){
+                    System.out.println("Welcome, to RVTS BookStore "+" "+s);
+                    System.out.println("First Name "+" "+s);
+                    System.out.println("Last Name  "+" "+s1);
+                    System.out.println("User Name  "+" "+s2);
+                    System.out.println("Password   "+" "+s3);
+                    System.out.println("Address    "+" "+s4);
+                    System.out.println("Mobile No. "+" "+s5);
+
                 }
-                System.out.println("");
-            }
+                else if(!s2.equals(username)){
+                    System.out.println("Invalid UserID, Please try Again");
+                }
+                else {
+                    System.out.println("Invalid Password, Please try Again");
+                }
 
+            }
             connection.close();
         } catch (Exception e) {
             System.out.println(e);
