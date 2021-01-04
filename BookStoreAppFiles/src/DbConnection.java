@@ -4,12 +4,12 @@ import java.sql.*;
 public class DbConnection extends signUp {
 
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String url = "jdbc:mysql://localhost:3306/signUpDb";
+    public static final String url = "jdbc:mysql://localhost:3306/signupdb";
     public static final String root = "root";
     public static final String password = "root";
 
     public DbConnection(String fname, String lname, String uname, String pass, String mno, String adde) {
-        String query = "insert into persons values(?,?,?,?,?,?)";
+        String query = "insert into person_info values(?,?,?,?,?,?)";
         try{
             Class.forName(DRIVER);
             Connection connection=DriverManager.getConnection(url,root,password);
@@ -21,6 +21,7 @@ public class DbConnection extends signUp {
             statement.setString(4,pass);
             statement.setString(5,adde);
             statement.setString(6,mno);
+
             Integer resultSet=statement.executeUpdate();
             System.out.println(resultSet+","+"row affected");
 
@@ -30,7 +31,7 @@ public class DbConnection extends signUp {
         }
     }
     public DbConnection(String username, String pass){
-        String query = "select *from persons where UserName=? and Pass=? ";
+        String query = "select *from person_info where UserName=? and Pass=? ";
 
 
         try {
