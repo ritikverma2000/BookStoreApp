@@ -30,14 +30,7 @@ public class  BookShop extends Frame implements ActionListener {
             }
         });
         login.addActionListener(this);
-//        signUp = new Button("SignUp");
-//        signUp.setBounds(180, 300, 200, 80);
-//        f.add(signUp);
-//        signUp.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                new signUp.thirdFrame();
-//            }
-//        });
+
         cart =new Button("Cart");
         cart.setBounds(180,300,200,80);
         cart.addActionListener(new ActionListener() {

@@ -28,8 +28,7 @@ public class booksearchComponent extends booksearch{
            //TableModel tm = new TableModel();
            DefaultTableModel model = new DefaultTableModel();
            model.setColumnIdentifiers(columnNames);
-           //DefaultTableModel model = new DefaultTableModel(tm.getData1(), tm.getColumnNames());
-           //table = new JTable(model);
+
            table = new JTable();
            table.setModel(model);
            table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -40,7 +39,7 @@ public class booksearchComponent extends booksearch{
            scroll.setVerticalScrollBarPolicy(
                    JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
            from = s1;
-           //String textvalue = textbox.getText();
+
            String book_id = "";
            String book_name= "";
            String book_author= "";
@@ -88,19 +87,7 @@ public class booksearchComponent extends booksearch{
 
 
 
-//           try{
-//               Class.forName(DRIVER);
-//               Connection connection=DriverManager.getConnection(url,root,password);
-//               String query = "select *  from book_info where Book_Name=?";
-//              PreparedStatement pst=connection.prepareStatement(query);
-//              ResultSet rs =pst.executeQuery(query);
-//
-//
-//           }
-//           catch (Exception e){
-//               JOptionPane.showMessageDialog(null,e);
-//
-//           }
+
 
 
 

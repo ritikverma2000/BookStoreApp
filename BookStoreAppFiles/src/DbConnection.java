@@ -33,10 +33,7 @@ public class DbConnection extends loginpart {
             System.out.println(e);
         }
     }
-//    public DbConnection(String bookname, String password){
-//
-//
-//    }
+
     public DbConnection(String username, String pass){
         String query = "select *from person_info where UserName=? and Pass=? ";
 
