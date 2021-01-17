@@ -1,7 +1,10 @@
 import javax.swing.*;
 import javax.swing.plaf.OptionPaneUI;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.*;
-public class DbConnection extends signUp {
+public class DbConnection extends loginpart {
 
     public static final String DRIVER = "com.mysql.jdbc.Driver";
     public static final String url = "jdbc:mysql://localhost:3306/signupdb";
@@ -30,6 +33,10 @@ public class DbConnection extends signUp {
             System.out.println(e);
         }
     }
+//    public DbConnection(String bookname, String password){
+//
+//
+//    }
     public DbConnection(String username, String pass){
         String query = "select *from person_info where UserName=? and Pass=? ";
 
@@ -66,7 +73,12 @@ public class DbConnection extends signUp {
                     System.out.println("Address    "+" "+s4);
                     System.out.println("Mobile No. "+" "+s5);
 
-                }
+//                        if(s2.equals("varmaritik04@gmail.com")){
+//                            new BookAdd();
+//                        }
+                    }
+
+
                 else if(!s2.equals(username)){
                     System.out.println("Invalid UserID, Please try Again");
                 }

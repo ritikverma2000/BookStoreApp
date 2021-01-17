@@ -1,11 +1,17 @@
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class  BookShop extends Frame implements ActionListener {
-    protected Button login,signUp,booksearch;
+    protected Button login,booksearch,cart;
+    BufferedImage img;
     public BookShop() {
         final Frame f = new Frame("BookStoreApp");
         Label l = new Label("WELCOME TO RVTS BOOK STORE");
@@ -16,34 +22,59 @@ public class  BookShop extends Frame implements ActionListener {
         f.add(l);
         login = new Button("Login");
         login.setBounds(180, 190, 200, 80);
-        f.add(login);
+
         login.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
                 new loginpart.secondFrame();
             }
         });
         login.addActionListener(this);
-        signUp = new Button("SignUp");
-        signUp.setBounds(180, 300, 200, 80);
-        f.add(signUp);
-        signUp.addActionListener(new ActionListener() {
+//        signUp = new Button("SignUp");
+//        signUp.setBounds(180, 300, 200, 80);
+//        f.add(signUp);
+//        signUp.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                new signUp.thirdFrame();
+//            }
+//        });
+        cart =new Button("Cart");
+        cart.setBounds(180,300,200,80);
+        cart.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-                new signUp.thirdFrame();
+                new Cart.FifthFrame();
             }
         });
+
+
         booksearch = new Button("BookSearch");
         booksearch.setBounds(180, 400, 200, 80);
-        f.add(booksearch);
+
         booksearch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new booksearch.FourthFrame();
             }
         });
+
+        try {
+            img = ImageIO.read (new File("D:\\java\\BookStoreApp\\BookStoreAppFiles\\src\\HomePageBackground.jpg"));
+        }
+        catch (IOException ex){
+
+        }
+
+
+        f.add(booksearch);
+        f.add(cart);
+        f.add(login);
+
         f.setSize(600, 600);
         f.setBackground(Color.CYAN);
         f.setLayout((LayoutManager)null);
-        f.setVisible(true);
         f.setResizable(false);
+        f.setVisible(true);
+
         f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 f.dispose();
@@ -52,11 +83,19 @@ public class  BookShop extends Frame implements ActionListener {
 
     }
 
+
+
     public static void main(String[] args) {
 
         new BookShop();
     }
 
+    @Override
+    public void paint( Graphics g){
+        super.paint(g);
+        g.drawImage(img,0,0,getWidth(),getHeight(),null);
+
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

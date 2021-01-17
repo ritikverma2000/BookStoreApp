@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class signUp {
+public class signUp extends loginpart{
 
     public static class thirdFrame extends Frame implements ActionListener {
         public Label fname;
@@ -64,6 +64,7 @@ public class signUp {
             signUpbutton = new Button("SIGN-UP");
             signUpbutton.setBounds(140, 360, 100, 20);
             signUpbutton.addActionListener(this);
+
             f2.add(signUpbutton);
             f2.add(n6);
             f2.add(adde);

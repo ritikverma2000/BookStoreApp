@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,8 +10,10 @@ public class booksearch extends BookShop {
         protected TextField searchBar;
         protected List l1;
         protected Button searchb;
+        protected JTable table;
+        protected  JScrollPane sp;
 
-        public FourthFrame() {
+           public FourthFrame() {
             Frame f3 = new Frame("bookSearch");
             Label l=new Label("PLS SEARCH FOR THE BOOK YOU WANT");
             l.setFont(new Font("Arial", 0, 20));
@@ -21,13 +24,12 @@ public class booksearch extends BookShop {
             searchBar.addActionListener(this);
             searchb =new Button("search");
             searchb.setBounds(400,140,80,20);
+            searchb.addActionListener(this);
+
 
             f3.add(searchb);
             f3.add(searchBar);
             f3.add(l);
-
-
-
             f3.setSize(500, 500);
             f3.setResizable(false);
             f3.setLayout(null);
@@ -39,9 +41,18 @@ public class booksearch extends BookShop {
             });
         }
 
+           public static void main(String[] args) {
+               new FourthFrame();
+           }
+
            @Override
            public void actionPerformed(ActionEvent e) {
                String s1=searchBar.getText();
+               if(e.getSource()==searchb){
+                  new booksearchComponent.sixthFrame(s1);
+
+               }
+
 
            }
        }
